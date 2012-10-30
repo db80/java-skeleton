@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+             http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd"
+             default-autowire="byName">
+
+    <!-- log4j configuration -->
+    <beans:bean id="log4jInitialization" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <beans:property name="targetClass" value="org.springframework.util.Log4jConfigurer"/>
+        <beans:property name="targetMethod" value="initLogging"/>
+        <beans:property name="arguments">
+            <beans:list>
+                <beans:value>classpath:log4j.properties</beans:value>
+            </beans:list>
+        </beans:property>
+    </beans:bean>
+
+    <beans:bean id="propertyConfigurer"
+      class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <beans:property name="location" value="config.properties" />
+    </beans:bean>
+
+    <!-- injection -->
+    <context:annotation-config />
+
+    <!-- context scan  -->
+    <context:component-scan base-package="it.unixhost.skeleton"/>
+
+
+</beans:beans>

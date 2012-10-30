@@ -1,0 +1,6 @@
+java-skeleton.iml
+JAVA-SKELETON-ERROR.log
+.idea/
+.idea/*
+target/
+target/*
