@@ -3,5 +3,4 @@ jdk:
   - openjdk6
   - openjdk7
   - oraclejdk7
-script: mvn package
-script: java -jar  target/java-skeleton-0.1-jar-with-dependencies.jar
+script: mvn package && java -jar  target/java-skeleton-0.1-jar-with-dependencies.jar
