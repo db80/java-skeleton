@@ -21,7 +21,10 @@ public class Application
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
 
         //service
-        NameService nameService = (NameService) context.getBean("nameServiceImpl");
-        System.out.println("Hello " + nameService.getName());
+        NameService nameService = (NameService) context.getBean("nameService");
+        System.out.println(nameService.getName());
+
+        //close context
+        context.close();
     }
 }

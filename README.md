@@ -1,6 +1,6 @@
-###A very simple java skeleton for a standalone application based on Maven (2.2), Spring (3.1) and Junit (4.9) in a TDD way.
+###A very simple java skeleton for a standalone application based on Maven (2.2), Spring (3.1 - Annotation config) and Junit (4.9) in a TDD way.
 
-To test and run tha application:
+To test and run the application:
 
     git clone git://github.com/db80/java-skeleton.git
     cd java-skeleton && mvn package

@@ -4,7 +4,6 @@ import it.unixhost.skeleton.service.NameService;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -28,7 +27,7 @@ public class NameServiceTest
     {
         logger.debug("SetUp");
         applicationContext = new ClassPathXmlApplicationContext("test-context.xml");
-        nameService = (NameService) applicationContext.getBean("nameServiceImpl");
+        nameService = (NameService) applicationContext.getBean("nameService");
     }
 
     @After
@@ -42,6 +41,6 @@ public class NameServiceTest
     public void testGetNameMethod()
     {
         logger.debug("Test Service Method getName()");
-        assertTrue( "Name is not Daniele", nameService.getName().equals("Daniele"));
+        assertTrue( "Name is not Daniele", nameService.getName().equals("Hello Daniele"));
     }
 }
